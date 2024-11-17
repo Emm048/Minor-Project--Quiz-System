@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="english.css" />
+  </head>
+  <body>
+    <h1 class="h1">play for fun & gather Knowledge with us</h1>
+    <div class="main">
+      <div class="cards">
+        <div class="img">
+          <img src="english.jpg" alt="english" />
+        </div>
+        <div class="title">
+          <h1>Parts of Speech</h1>
+        </div>
+        <div class="dis">
+          <a href="#"><button id="playNowButton">PLAY NOW</button></a>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="img">
+          <img src="gk.jpg" alt="gk" />
+        </div>
+        <div class="title">
+          <h1>Tenses</h1>
+        </div>
+        <div class="dis">
+          <a href="#"><button>PLAY NOW</button></a>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="img">
+          <img src="sport.jpeg" alt="sport" />
+        </div>
+        <div class="title">
+          <h1>Articles</h1>
+        </div>
+        <div class="dis">
+          <a href="#"><button>PLAY NOW</button></a>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="img">
+          <img src="science.jpeg" alt="science" />
+        </div>
+        <div class="title">
+          <h1>Preposition</h1>
+        </div>
+        <div class="dis">
+          <a href="#"><button>PLAY NOW</button></a>
+        </div>
+      </div>
+      <div class="button">
+        <a href="Categories.html"><button>back</button></a>
+        <a href="login.html"><button>login / signup</button></a>
+      </div>
+
+      <!-- Modal -->
+      <div id="quizModal" class="modal">
+        <div class="modal-content">
+          <span class="close-icon" onclick="closeModal()">&times;</span>
+          <h2>MCQ Quiz</h2>
+          <form id="quizForm">
+            <div id="questionContainer">
+              <!-- Questions will be dynamically inserted here -->
+            </div>
+            <div class="navigation">
+              <button type="button" id="prevButton" onclick="prevQuestion()">
+                Previous
+              </button>
+              <button type="button" id="nextButton" onclick="nextQuestion()">
+                Next
+              </button>
+              <button type="submit" id="submitButton">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="english.js"></script>
+  </body>
+</html>

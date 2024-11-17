@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>login</title>
+    <link rel="stylesheet" href="login.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="curved-shape"></div>
+      <div class="curved-shape2"></div>
+      <div class="form-box login">
+        <h2 class="animation" style="--D:0 --s:21">Login</h2>
+        <form id="loginForm">
+          <div class="input-box animation" style="--D:1 --s:22">
+            <input type="text" id="username" name="username" />
+            <label>Email</label>
+            <i class="fa-solid fa-user"></i>
+            <p class="error-message" id="usernameError"></p>
+          </div>
+          <div class="input-box animation" style="--D: 2; --s: 23">
+            <input type="password" id="password" name="password" />
+            <label>Password</label>
+            <!-- <span class="eye" onclick="myFunc()">
+              <i id="hide3" class="fa fa-eye"></i>
+              <i id="hide4" class="fa fa-eye-slash"></i>
+            </span> -->
+            <p class="error-message" id="passwordError"></p>
+          </div>
+          <div class="regi-link animation" style="--D: 5; --s: 26">
+            <b
+              ><p>Forget password? <a href="resetPassword.html">reset</a></p></b
+            >
+          </div>
+          <div class="input-box animation" style="--D: 3; --s: 24">
+            <button class="btn" type="submit">Login</button>
+          </div>
+          <div class="regi-link animation" style="--D: 4; --s: 25">
+            <b
+              ><p style="font-size: 20px">
+                Don't have an account?
+                <a href="register.html" class="SignUpLi">Register</a>
+              </p></b
+            >
+            <b
+              ><p style="font-size: 20px">
+                Go back to home?
+                <a href="homenew.html" class="SignUpLi">Home</a>
+              </p></b
+            >
+          </div>
+        </form>
+      </div>
+      <div class="info-content login">
+        <h2 class="animation" style="--D: 0; --s: 22">WELCOME BACK!</h2>
+        <p class="animation" style="--D: 1; --s: 21">
+          my name is shruti<br />
+          <i class="fa-solid fa-heart"></i>
+          <i class="fa-solid fa-face-kiss-beam"></i>
+        </p>
+      </div>
+    </div>
+    <!-- <script src="login.js"></script> -->
+     <script>
+      document
+  .getElementById("loginForm")
+  .addEventListener("submit", function (event) {
+    
+    event.preventDefault(); // Prevent form submission
+
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const usernameError = document.getElementById("usernameError");
+    const passwordError = document.getElementById("passwordError");
+
+    // Reset error messages
+    usernameError.textContent = "";
+    passwordError.textContent = "";
+
+    let valid = true;
+
+    // Validate username
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (username.value.trim() === "") {
+      usernameError.textContent = "Email is required.";
+      valid = false;
+    } else if (!emailRegex.test(username.value)) {
+      usernameError.textContent = "Please enter a valid email address.";
+      valid = false;
+    }
+
+    // Validate password (8 characters, at least 1 number, 1 letter, 1 special character)
+    const passwordRegex =
+      /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (password.value.trim() === "") {
+      passwordError.textContent = "Password is required.";
+      valid = false;
+    } else if (!passwordRegex.test(password.value)) {
+      passwordError.textContent =
+        "Password must be at least 8 characters, include a letter, a number, and a special character.";
+      valid = false;
+    }
+
+    // If valid, submit form (for demonstration)
+    if (valid) {
+        console.log(">>>>>>>>>>>>>>>>>>", username.value,password.value);
+        console.log("payload", {name:username.value, password: password.value });
+        
+        
+    //   this.submit();
+    }
+  });
+     </script>
+  </body>
+</html>

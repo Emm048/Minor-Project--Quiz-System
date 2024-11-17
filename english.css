@@ -1,0 +1,174 @@
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(240, 225, 240);
+}
+.h1{
+    text-align: center;
+    color: #a81e1e;
+    margin-top: 15px;
+    font-size: 50px;
+    text-decoration:underline;
+    font-family: Curlz MT;
+}
+.cards{
+    margin-left: 45px;
+    margin-top: 60px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width:20%;
+    height: 350px;
+    background-color: rgb(245, 241, 241);
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px black;
+    display: inline-block;
+}
+.title{
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+    color: rgb(19, 73, 117);
+    font-family: cursive;
+}
+.dis{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    color: grey;
+}
+.dis button{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 2px solid purple;
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 15px;
+    cursor: pointer;
+    outline: 1px solid rgb(188, 181, 181);
+}
+button:hover{
+    background-color: rgb(94, 79, 79);
+    color: white;
+    transition: .3s;
+   
+    border: 2px solid grey;
+    box-shadow: 2px solid grey;
+}
+.img{
+    width: 100%;
+    height: 250px;
+}
+
+.img img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    object-fit:fill;
+    
+
+}
+.button{
+    text-align: center;
+    margin-top: 35px;
+}
+.button button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background-color: rgb(17, 16, 16);
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: antiquewhite;
+}
+.button button:hover{
+    background-color: blanchedalmond;
+    color: rgb(85, 80, 80);
+    border: 1px solid purple;
+}
+
+ /* Close icon style */
+ .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #ff27cd;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .close-icon:hover {
+    color: #ff0033;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background */
+    z-index: 9999;
+  }
+
+  .modal-content {
+    background-color: #fff; /* Slightly off-white background */
+    padding: 20px;
+    margin: 10% auto;
+    width: 50%; /* Reduced width */
+    max-width: 600px; /* Maximum width */
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* More prominent shadow */
+    position: relative;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 26px;
+    color: #ff27cd;
+    margin-bottom: 20px;
+  }
+
+  .options {
+    margin-top: 10px;
+  }
+
+  .options label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+
+  .navigation {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .navigation button {
+    margin: 0 15px;
+    padding: 12px 25px;
+    background-color: #ff27cd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .navigation button:hover {
+    background-color: #ff2a8b;
+  }
+
+  .navigation button:disabled {
+    background-color: #ccc;
+  }

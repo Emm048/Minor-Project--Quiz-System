@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>login</title>
+    <link rel="stylesheet" href="login.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="curved-shape"></div>
+      <div class="curved-shape2"></div>
+      <div class="form-box register">
+        <h2 class="animation" style="--D:0 --s:21">Register</h2>
+        <form action="#" id="registerForm">
+          <div class="input-box animation" style="--li: 18; --s: 1">
+            <input type="text" id="userRegistername" />
+            <label for="userRegistername">Username</label>
+            <i class="fa-solid fa-user"></i>
+            <p class="error-message" id="usernameRegisterError"></p>
+          </div>
+          <div class="input-box animation" style="--li: 18; --s: 1">
+            <input type="text" id="userRegisterEmail" />
+            <label for="userRegisterEmail">Email</label>
+            <i class="fa-solid fa-envelope"></i>
+
+            <p class="error-message" id="userEmailRegisterError"></p>
+          </div>
+          <div class="input-box animation" style="--li: 19; --s: 2">
+            <input type="password" id="passwordRegister" />
+            <label for="passwordRegister">Password</label>
+            <!-- <span class="eye" onclick="myFunction()">
+              <i id="hide1" class="fa fa-eye"></i>
+              <i id="hide2" class="fa fa-eye-slash"></i>
+            </span> -->
+            <p class="error-message" id="passwordRegisterError"></p>
+          </div>
+          <div class="radio-group animation" style="--li: 20; --s: 3">
+            <p>Select Role:</p>
+            <input type="radio" id="teacher" name="role" value="Teacher" />
+            <label for="teacher">Teacher</label>
+            <input type="radio" id="student" name="role" value="Student" />
+            <label for="student">Student</label>
+            <p id="roleRegisterError" class="error-message"></p>
+          </div>
+
+          <div id="passwordError" class="error"></div>
+          <div class="input-box animation" style="--li: 20; --s: 3">
+            <button class="btn" type="submit">Register</button>
+          </div>
+          <div class="regi-link animation" style="--li: 21; --s: 4">
+            <p style="font-size: 16px">
+              Already have an account ?
+              <a href="login.html" class="SignInLink">Login</a>
+            </p>
+            <p style="font-size: 16px">
+              Go back to home ?
+              <a href="homenew.html" class="SignInLink">Home</a>
+            </p>
+          </div>
+        </form>
+      </div>
+      <div class="info-content login">
+        <h2 class="animation" style="--li: 17; --s: 0">WELCOME BACK!</h2>
+        <p class="animation" style="--li: 18; --s: 1">
+          Hii...This page is degine by Soumyadeep Halder.
+        </p>
+      </div>
+    </div>
+</body>
+<script src="register.js"></script>
+</html>
