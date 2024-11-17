@@ -68,55 +68,66 @@
       </div>
     </div>
     <!-- <script src="login.js"></script> -->
-     <script>
+    <script>
       document
-  .getElementById("loginForm")
-  .addEventListener("submit", function (event) {
-    
-    event.preventDefault(); // Prevent form submission
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
 
-    const username = document.getElementById("username");
-    const password = document.getElementById("password");
-    const usernameError = document.getElementById("usernameError");
-    const passwordError = document.getElementById("passwordError");
+          const username = document.getElementById("username");
+          const password = document.getElementById("password");
+          const usernameError = document.getElementById("usernameError");
+          const passwordError = document.getElementById("passwordError");
 
-    // Reset error messages
-    usernameError.textContent = "";
-    passwordError.textContent = "";
+          // Reset error messages
+          usernameError.textContent = "";
+          passwordError.textContent = "";
 
-    let valid = true;
+          let valid = true;
 
-    // Validate username
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (username.value.trim() === "") {
-      usernameError.textContent = "Email is required.";
-      valid = false;
-    } else if (!emailRegex.test(username.value)) {
-      usernameError.textContent = "Please enter a valid email address.";
-      valid = false;
-    }
+          // Validate username
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (username.value.trim() === "") {
+            usernameError.textContent = "Email is required.";
+            valid = false;
+          } else if (!emailRegex.test(username.value)) {
+            usernameError.textContent = "Please enter a valid email address.";
+            valid = false;
+          }
 
-    // Validate password (8 characters, at least 1 number, 1 letter, 1 special character)
-    const passwordRegex =
-      /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (password.value.trim() === "") {
-      passwordError.textContent = "Password is required.";
-      valid = false;
-    } else if (!passwordRegex.test(password.value)) {
-      passwordError.textContent =
-        "Password must be at least 8 characters, include a letter, a number, and a special character.";
-      valid = false;
-    }
+          // Validate password (8 characters, at least 1 number, 1 letter, 1 special character)
+          const passwordRegex =
+            /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+          if (password.value.trim() === "") {
+            passwordError.textContent = "Password is required.";
+            valid = false;
+          } else if (!passwordRegex.test(password.value)) {
+            passwordError.textContent =
+              "Password must be at least 8 characters, include a letter, a number, and a special character.";
+            valid = false;
+          }
 
-    // If valid, submit form (for demonstration)
-    if (valid) {
-        console.log(">>>>>>>>>>>>>>>>>>", username.value,password.value);
-        console.log("payload", {name:username.value, password: password.value });
-        
-        
-    //   this.submit();
-    }
-  });
-     </script>
+          // If valid, submit form (for demonstration)
+          if (valid) {
+            console.log(">>>>>>>>>>>>>>>>>>", username.value, password.value);
+            console.log("payload", {
+              name: username.value,
+              password: password.value,
+            });
+
+            //password encoded
+            const hashedPassword = crypto.subtle
+              .digest("SHA-256", new TextEncoder().encode(password.value))
+              .then((hash) => {
+                return Array.from(new Uint8Array(hash))
+                  .map((byte) => byte.toString(16).padStart(2, "0"))
+                  .join("");
+              });
+            hashedPassword.then(console.log);
+
+            //   this.submit();
+          }
+        });
+    </script>
   </body>
 </html>
